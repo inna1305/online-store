@@ -4,6 +4,7 @@ import {getTotalCount} from "./updateCount";
 import createElement from '../../../helpers/createElement';
 
 const getHeader = (): HTMLElement => {
+  const header = createElement('header', {});
   const background = createElement('div', { class: 'header-background' });
 
   const headerContainer = createElement('div', { class: 'content-container' });
@@ -30,8 +31,8 @@ const getHeader = (): HTMLElement => {
       router.navigateTo('/cart')
     }
   }
-
-return background;
+header.append(background);
+return header;
 }
 
 export default getHeader;

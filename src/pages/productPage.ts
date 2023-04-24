@@ -14,4 +14,4 @@ const getProductPage = (id: number) => {
 
   main.append(getProductCard(product));
 }
-export default getProductPage
+export default getProductPage;
