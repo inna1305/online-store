@@ -10,6 +10,7 @@ const getHeader = (): HTMLElement => {
 
   const logo = createElement('h1', { class: 'logo' });
   logo.innerText = 'Hobby Art';
+  logo.addEventListener('click', () => router.navigateTo('/'));
 
   const headerElements = createElement('div', { class: 'header-elements' });
 
