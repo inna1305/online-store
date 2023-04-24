@@ -92,9 +92,7 @@ const getPriceTable = (): HTMLElement => {
   //кнопка заказа
   const orderButton = createElement('button', { class: 'button_color', id: 'order' });
   orderButton.innerText = 'place order';
-  orderButton.addEventListener('click', () => {
-    orderButton.addEventListener('click', handleOrderButton);
-  });
+  orderButton.addEventListener('click', handleOrderButton);
   total.append(table);
   total.append(orderButton);
   return total;
