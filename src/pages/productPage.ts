@@ -1,7 +1,7 @@
 import clearPage from "./pagesFunctions/clearPage"
 import setDefaultPage from "./pagesFunctions/defaultPage";
 import getProductCard from "../components/templates/main/product-card";
-import { productData } from "../components/product-data";
+import { productData } from "../base/product-data";
 
 const getProductPage = (id: number) => {
   window.scroll(0, 0)

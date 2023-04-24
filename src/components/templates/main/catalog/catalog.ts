@@ -1,4 +1,4 @@
-import {productData} from "../../../product-data";
+import {productData} from "../../../../base/product-data";
 import router from "../../../router/router";
 import {toggleProduct} from "../../../functions/addProductToCart";
 import {isProductExistsInCart} from "./updateButtonsText";

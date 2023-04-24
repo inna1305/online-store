@@ -1,6 +1,6 @@
 import {IPromoCode} from "../../../types/IPromoCode";
 import {getArrayFromLS} from "../localStorage";
-import {promocodeData} from "../../promocode-data";
+import {promocodeData} from "../../../base/promocode-data";
 import {updatePrevSum, updateSumWithPromo} from "../../templates/header/updateSum";
 import {updateCounterInTotal} from "../../templates/header/updateCount";
 

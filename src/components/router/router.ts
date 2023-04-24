@@ -1,6 +1,6 @@
 import Router from 'vanilla-router';
 import getMainPage from '../../pages/mainPage';
-import { productData } from '../product-data';
+import { productData } from '../../base/product-data';
 import getProductPage from '../../pages/productPage';
 import getCartPage from '../../pages/cartPage';
 

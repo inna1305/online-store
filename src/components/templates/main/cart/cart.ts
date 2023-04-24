@@ -1,5 +1,5 @@
 import { IProductData } from "../../../../types/IProductData";
-import {productData} from "../../../product-data";
+import {productData} from "../../../../base/product-data";
 import getProductCardInCart from "./product-card-in-cart";
 import getModalForPay from "./modal-for-pay/modal-for-pay";
 import {getArrayFromLS} from "../../../functions/localStorage";

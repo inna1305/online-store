@@ -1,5 +1,5 @@
 import { IProductData } from "../../../types/IProductData";
-import { productData } from "../../product-data";
+import { productData } from "../../../base/product-data";
 import convertNameToPath from "./convertNameToPath";
 import nothingFound from "./nothingFound";
 
