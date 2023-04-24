@@ -1,0 +1,44 @@
+.contacts {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  width: 100%;
+  @include content-container;
+
+  &__item {
+    list-style-type: none;
+    color: $font-color;
+    font: $main-font;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+  &__text > a, &__item > a {
+    color: inherit;
+  }
+}
+
+.container-contacts {
+  height: 45px;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: 15px;
+  height: 15px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#phone {
+  background-image: url('./assets/phone.svg');
+}
+
+#map {
+  background-image: url('./assets/map.svg');
+}
+#clock {
+  background-image: url('./assets/clock.svg');
+}

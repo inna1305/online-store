@@ -1,8 +1,8 @@
 import Router from 'vanilla-router';
-import getCartPage from '../cartPage';
-import getMainPage from '../mainPage';
+import getCartPage from '../../pages/cartPage';
+import getMainPage from '../../pages/mainPage';
 import { productData } from '../product-data';
-import getProductPage from '../productPage';
+import getProductPage from '../../pages/productPage';
 
 const router = new Router({
   mode: 'history',
@@ -21,21 +21,3 @@ productData.forEach(product => {
   })
 })
 router.add('/cart', getCartPage)
-
-export function getMainNavigate() {
-  const mainPageNavigate = document.querySelector('#main');
-  if (mainPageNavigate) {
-    mainPageNavigate.addEventListener('click', () => {
-      router.navigateTo(`/`);
-    })
-  }
-}
-
-export function goBack() {
-  const back = document.querySelector('#back');
-  if (back) {
-    back.addEventListener('click', () => {
-      router.back();
-    })
-  }
-}

@@ -3,6 +3,7 @@ import {toggleProduct} from "../../functions/addProductToCart";
 import {handleOrderButton} from "../../functions/cart_functions/handleOrderButton";
 import getModalForPay from "./cart/modal-for-pay/modal-for-pay";
 import {isProductExistsInCart} from "./catalog/updateButtonsText";
+import breadCrumbs from './bread-crumbs';
 
 
 const getProductCard = (product: IProductData): HTMLElement => {
@@ -28,16 +29,7 @@ const getProductCard = (product: IProductData): HTMLElement => {
   const productInfo = document.createElement('div');
   productInfo.className = 'product-info';
 
-  const breadCrumbs = document.createElement('div');
-  breadCrumbs.className = 'path-to-section';
-  breadCrumbs.innerHTML = `
-      <a href="#" class="path-to-section__item" id="back">Back </a>
-      <span class="arrow">←
-      </span>
-      <a href="#" class="path-to-section__item" id="main"> Main </a><span class="arrow">→
-      </span><span class="path-to-section__item" id="cart"> ${product.name} </a>
-  `;
-  productInfo.append(breadCrumbs);
+  productInfo.append(breadCrumbs(product.name));
 
 
   const productCard = document.createElement('section');

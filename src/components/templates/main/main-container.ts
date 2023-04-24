@@ -6,7 +6,7 @@ const getMainContainer = (): HTMLElement => {
 
   mainContainer.className = 'main-container';
 
-  mainContainer.append(getFilters(), getCatalog())
+  mainContainer.append(getFilters(), getCatalog());
 
   return mainContainer;
 }

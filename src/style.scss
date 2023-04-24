@@ -3,6 +3,7 @@
 @import "components/templates/main/catalog/catalog";
 @import "components/templates/header/header";
 @import "components/buttons";
+@import "components/templates/main/contacts/contacts";
 @import "components/templates/main/banner";
 @import "components/templates/main/filters";
 @import "components/templates/footer/footer";
@@ -15,6 +16,7 @@ body {
   color: $font-color;
   font: $main-font;
   position: relative;
+  margin-top: $header-height;
 }
 
 fieldset {

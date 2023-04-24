@@ -3,8 +3,8 @@ import {ICartProductRecord} from "../../../types/ICartProductRecord";
 import {updateCartCounter, updateCounterInTotal} from "../../templates/header/updateCount";
 import {updatePrevSum, updateSum, updateSumWithPromo} from "../../templates/header/updateSum";
 import {getArrayFromLS} from "../localStorage";
-import clearPage from "../../clearPage";
-import setDefaultPage from "../../defaultPage";
+import clearPage from "../../../pages/pagesFunctions/clearPage";
+import setDefaultPage from "../../../pages/pagesFunctions/defaultPage";
 
 function getProductFromEvent(event: Event): HTMLElement {
   const button = event.target as HTMLElement;

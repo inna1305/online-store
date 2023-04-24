@@ -1,54 +1,36 @@
-.contacts {
-  display: flex;
-  justify-content: space-between;
-  padding: 0;
-  width: 100%;
-  @include content-container;
-
-  &__item {
-    list-style-type: none;
-    color: $light-on-dark;
-    font: $main-font;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 8px;
-  }
-}
-
-.container-contacts {
-  height: 45px;
-  background: $gradient;
-  display: flex;
-  align-items: center;
-}
-
 .logo {
-  margin: 45px auto 80px;
-  width: 171.25px;
-  height: 61.5px;
   font: $additional-font;
-  font-size: 50px;
-  color: $button-inactive-color;
+  font-size: 38px;
+  color: white;
   hyphens: auto;
   line-height: 0.75;
   letter-spacing: -1px;
   text-align: center;
+
+  &:hover {
+    cursor: pointer;
+  }
   }
 
 .header-elements {
-  right: 0;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 20px;
   padding-right: 15px;
-  position: fixed;
-  z-index: 1;
-  bottom: 20px;
 }
 
 .cart-container {
   position: relative;
+}
+
+.header-background {
+  background: $gradient;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  height: $header-height;
 }
 
 

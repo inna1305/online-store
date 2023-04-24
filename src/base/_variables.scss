@@ -19,10 +19,11 @@ $additional-font: 400 16px 'Spectral SC', serif;
 
 //sizes
 $product-card-photo-size: 550px;
+$header-height: 80px;
 
 
 @mixin content-container {
-max-width: 1620px;
+  max-width: 1620px;
   margin: auto;
   padding: 0 15px;
 }

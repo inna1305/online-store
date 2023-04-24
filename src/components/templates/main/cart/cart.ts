@@ -7,6 +7,8 @@ import {IPromoCode} from "../../../../types/IPromoCode";
 import {setPromoElement} from "../../../functions/cart_functions/handlePromoInput";
 import {getCartSum, applyPromoToSum} from "../../header/updateSum";
 import {getTotalCount} from "../../header/updateCount";
+import getBreadCrumbs from '../bread-crumbs';
+import createElement from '../../../../helpers/createElement';
 
 const getCart = (): HTMLElement => {
   const productsInCartPage: IProductData[] = [];
@@ -16,17 +18,6 @@ const getCart = (): HTMLElement => {
   const storageCart = localStorage.getItem('cart');
   const objCart = JSON.parse(storageCart!);
 
-  // if (objCart.length === 0) {
-  //   const main = document.querySelector('main');
-  //   if (main) {
-  //     main.classList.add('empty-cart');
-  //     const empty = document.createElement('div');
-  //     empty.innerText = 'The Cart is empty! :(';
-  //     main.append(empty);
-  //     return main;
-  //   }
-  // }
-
   for (let i = 0; i < objCart.length; i++) {
     productsInCartPage.push(productData[objCart[i].id - 1]);
   }
@@ -34,7 +25,7 @@ const getCart = (): HTMLElement => {
   const promocodes = getArrayFromLS('promocodes');
 
 
-  const cart = document.createElement('section');
+  const cart = createElement('section', { class: 'cart-container' });
 
   //фон для модалки
   const darkBackground = document.createElement('div');
@@ -44,23 +35,10 @@ const getCart = (): HTMLElement => {
   document.body.prepend(getModalForPay());
 
 
-//крошки
-  cart.className = 'cart-container';
-  const breadCrumbs = document.createElement('div');
-  breadCrumbs.className = 'path-to-section';
-  breadCrumbs.innerHTML = `
-    <a href="#" class="path-to-section__item" id="back">Back </a>
-      <span class="arrow">←
-      </span>
-      <a href="#" class="path-to-section__item" id="main"> Main </a><span class="arrow">→
-      </span><span class="path-to-section__item" id="cart"> Cart </a>
-  `;
-  cart.append(breadCrumbs);
+  cart.append(getBreadCrumbs('Cart'));
 
 
-  //название страницы
-  const title = document.createElement('h2');
-  title.className = 'title';
+  const title = createElement('h2', { class: 'title' });
   title.innerHTML = 'My Cart';
   cart.append(title);
 
