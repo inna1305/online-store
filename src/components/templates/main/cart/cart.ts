@@ -4,11 +4,12 @@ import getProductCardInCart from "./product-card-in-cart";
 import getModalForPay from "./modal-for-pay/modal-for-pay";
 import {getArrayFromLS} from "../../../functions/localStorage";
 import {IPromoCode} from "../../../../types/IPromoCode";
-import {setPromoElement} from "../../../functions/cart_functions/handlePromoInput";
+import {handlePromoInput, setPromoElement} from '../../../functions/cart_functions/handlePromoInput';
 import {getCartSum, applyPromoToSum} from "../../header/updateSum";
 import {getTotalCount} from "../../header/updateCount";
 import getBreadCrumbs from '../bread-crumbs';
 import createElement from '../../../../helpers/createElement';
+import {handleOrderButton} from '../../../functions/cart_functions/handleOrderButton';
 
 const getCart = (): HTMLElement => {
   const productsInCartPage: IProductData[] = [];
@@ -86,7 +87,10 @@ const getCart = (): HTMLElement => {
   rowPromoHead.innerText = 'Promo code';
 
   const rowPromoData = document.createElement('td');
-  rowPromoData.insertAdjacentHTML('beforeend', `<input type="text" name="promo-code" class="promocode"/>`);
+  const promoInput = createElement('input', { type: 'text', name: 'promo-code', class: 'promocode' });
+  promoInput.addEventListener('input', handlePromoInput);
+  rowPromoData.insertAdjacentElement('beforeend', promoInput);
+
   rowPromo.append(rowPromoHead, rowPromoData);
 
   const rowApplied = document.createElement('tr');
@@ -143,10 +147,11 @@ const getCart = (): HTMLElement => {
 
 
   //кнопка заказа
-  const orderButton = document.createElement('button');
-  orderButton.id = 'order';
-  orderButton.className = 'button_color';
-  orderButton.innerHTML = 'place order';
+  const orderButton = createElement('button', { class: 'button_color', id: 'order' });
+  orderButton.innerText = 'place order';
+  orderButton.addEventListener('click', () => {
+    orderButton.addEventListener('click', handleOrderButton);
+  });
   total.append(table);
   total.append(orderButton);
   productsAndTotal.append(total);
