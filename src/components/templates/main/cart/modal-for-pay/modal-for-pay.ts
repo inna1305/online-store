@@ -5,17 +5,15 @@ import {
   handleValidInput,
   handleConfirmButton
 } from "../../../../functions/validateModal";
+import createElement from '../../../../../helpers/createElement';
 
 
 const getModalForPay = () => {
-  const modalForPay = document.createElement('div');
-
-  modalForPay.className = 'modal-pay';
+  const modalForPay = createElement('div', { class: 'modal-pay' });
 
   const form = document.createElement('form');
   form.action = '#';
-  const fieldsetUserInfo = document.createElement('fieldset');
-  fieldsetUserInfo.className = 'user-data';
+  const fieldsetUserInfo = createElement('fieldset', { class: 'user-data' });
 
   fieldsetUserInfo.innerHTML = `
         <label for="userFullName" class="user-data__label-item">Your name</label>
@@ -30,18 +28,19 @@ const getModalForPay = () => {
         `;
 
 
-  const address = document.createElement('input');
-  address.className = 'user-data__input-item';
-  address.required = true;
-  address.placeholder = 'at least 3 words of 5 letters';
-  address.name, address.id = 'address';
-  address.type = 'text';
+  const address = createElement('input',
+    { class: 'user-data__input-item',
+               required: 'true',
+               placeholder: 'at least 3 words of 5 letters',
+               name: 'address',
+               id: 'address',
+               type: 'text'
+             });
   fieldsetUserInfo.append(address);
   address.addEventListener('input', handleAddressInput);
 
 
-  const fieldsetPaymentData = document.createElement('fieldset');
-  fieldsetPaymentData.className = 'payment-card';
+  const fieldsetPaymentData = createElement('fieldset', { class: 'payment-card' });
   fieldsetPaymentData.insertAdjacentHTML('afterbegin',
     '<label for="cardnumber" class="user-data__label-item">Card number</label>'
   );

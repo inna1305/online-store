@@ -14,12 +14,6 @@ const getMainPage = () => {
 
   main.append(getContacts(), getMainBanner(), getSortContainer(), getMainContainer());
 
-  const viewAll = document.querySelector('.button_color') as HTMLElement;
-
-  viewAll.onclick = () => {
-    window.scroll(0, 800)
-  }
-
   filterCatalog();
 }
 
