@@ -1,7 +1,7 @@
 # Online Store SPA
 
 ## Description
-This project is a single-page web application (SPA) of an online store, developed using TypeScript, JavaScript, and web development technologies.
+This project is a single-page web application (SPA) of an online store, developed using TypeScript and web development technologies.
 
 ## Pages
 1. **Home**: The main page of the store, displaying a list of products.
@@ -9,19 +9,8 @@ This project is a single-page web application (SPA) of an online store, develope
 3. **Cart Page**: Allows users to manage items added to the cart.
 
 ## Technologies and Tools
-- **React.js**: Used for building the user interface.
 - **TypeScript**: For typing JavaScript and enhancing the development process.
-- **Next.js**: For creating the SPA and managing routing.
 - **LocalStorage**: For storing data about products in the cart.
-
-## Project Structure
-- `src/`: Source code of the application.
-    - `components/`: React components.
-    - `pages/`: Application pages.
-    - `utils/`: Helper utilities and functions.
-    - `styles/`: Styles and style sheets.
-- `webpack.config.js`: Webpack configuration for project bundling.
-- `package.json`: Dependencies and scripts to manage the project.
 
 ## Scripts
 - `start`: Launches a local development server in development mode.
